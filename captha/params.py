@@ -1,0 +1,30 @@
+import alphabets
+
+random_sample = True
+best_accuracy = 0.5
+keep_ratio = False
+adam = False
+adadelta = False
+saveInterval = 2
+valInterval = 400
+n_test_disp = 10
+displayInterval = 1000
+experiment = './expr'
+alphabet = alphabets.alphabet
+crnn = './expr/crnn_leftbottom_0.9971875.pth'
+crnn_color = './expr/crnn_best_color.pth'
+gan_G ='./expr/Gan_G.pth'
+beta1 =0.5
+lr = 0.0001
+niter = 300
+nh = 256
+imgW = 32
+imgH = 32
+val_batchSize = 1
+batchSize = 1
+workers = 2
+std = 0.193
+mean = 0.588
+color_height=384
+color_width=344
+saveOrderpath='./output/OrderImage'
