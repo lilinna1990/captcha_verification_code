@@ -11,19 +11,19 @@ http://www.gsxt.gov.cn/index.html
 汉字字符存在，字体不同，旋转，模糊以及在彩色图像的背景中
 如下图：
 
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/image_webverificationcode.png)
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/image_webverificationcode1.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/image_webverificationcode.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/image_webverificationcode1.png)
 
 
 
 #### 关键代码和主要流程说明：
 #### 主要流程：
 - 整体分为了左下角白色背景区域的识别，与彩色部分识别的结果共同联系获取
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imageleftbottom.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imageleftbottom.png)
 
 - 首先识别到参考文字后，利用参考文字的顺序获取改组词汇的顺序
 然后利用彩色文字的识别对应后获得彩色文字的顺序
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imageyolo-color.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imageyolo-color.png)
 
 ##### 左下角白色部分：
 分为：
@@ -31,9 +31,9 @@ http://www.gsxt.gov.cn/index.html
 
 - 训练的网络用于获取单个字体的位置，从而分割出来:
 
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imageshufajia.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imageshufajia.png)
 - 获得单个字之后对其检测部分单独做分类
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imagezhan.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imagezhan.png)
 ###### 使用基于ｃｒｎｎ的模型的字符分类：
 
 crnn_chinese_characters_rec-master/gen_printed_char_white_wirtelabel.py
@@ -46,7 +46,7 @@ https://github.com/fxsjy/jieba
 
 ###### 获得语序:
 
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imageresult.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imageresult.png)
 
 　　　　
 ##### 彩色部分：
@@ -54,18 +54,18 @@ https://github.com/fxsjy/jieba
 yolov3-master
 
 - 训练的网络用于获取单个字体的位置，从而分割出来
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/leftmarker.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/leftmarker.png)
 获得单个字之后对其检测部分单独做分类
 
 ###### 使用基于ｃｒｎｎ的模型的字符分类斜体字体：
-/crnn_chinese_characters_rec-master/gen_printed_char_white_wirtelabel-64X64-xieti.py
+crnn_chinese_characters_rec-master/gen_printed_char_white_wirtelabel-64X64-xieti.py
 该组代码可以实现黑白的和ｃｏｌｏｒ中类似的斜体.
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imagetraincharactor.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imagetraincharactor.png)
 
 ###### 彩色字体分割
 - 这些字体帮助分类黑白的字体，而彩色验证码需要
 通过分割的办法减少背景干扰
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imagesegment.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/imagesegment.png)
 Ｇ－Ｃｏｐｙ２．ｐｔｈ
 是用来分割的网络，是通过wgan获取的
 wgan-pytorch
@@ -85,11 +85,11 @@ wgan-pytorch
 - color_crnn_model_path 是训练出来的彩色词汇部分的验证码的单汉字识别的模型的路径
 对应
 
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/codedetect.png)
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/keycode.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/codedetect.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/keycode.png)
 - 获得左下角的字体内容和顺序
 
-![image](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/segmentcode.png)
+![Image text](https://github.com/lilinna1990/captcha_verification_code/tree/master/captha/readmeImages/segmentcode.png)
 
 - 获得彩色部分的，并结合左下角的结果
 
